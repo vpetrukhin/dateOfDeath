@@ -1,9 +1,9 @@
 .header {
-  background: transparent url(../../assets/image/blik.png) no-repeat center/cover;
+  background: transparent url(../../assets/image/blik.png) no-repeat center/100% 850px;
 }
 .header__container {
   max-width: 1440px;
-  margin: 0 auto;
+  margin: 0 auto 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -73,42 +73,12 @@
   margin-bottom: 40px;
   text-transform: uppercase;
 }
-@keyframes background {
-  0% {
-    left: -5%;
-  }
-  100% {
-    left: 55%;
-  }
-}
 .header__btn {
-  border: none;
   margin-bottom: 34px;
-  padding: 0;
-  width: 310px;
-  padding: 23px 0;
-  position: relative;
-  font-family: Roboto;
-  font-size: 20px;
-  line-height: 23px;
-  color: #FFFFFF;
-  border-radius: 50px;
-  background: linear-gradient(90deg, rgba(246, 200, 102, 0.9) -6.2%, rgba(254, 173, 53, 0.9) 100%);
-}
-.header__btn::after {
-  content: '';
-  display: block;
-  width: 50%;
-  height: 69px;
-  position: absolute;
-  top: 0;
-  left: -5%;
-  background: transparent linear-gradient(248.67deg, rgba(255, 255, 255, 0) 30.84%, rgba(255, 255, 255, 0.29) 46.06%, rgba(255, 255, 255, 0) 64.04%);
-  animation: background 2s infinite;
 }
 .header__subtext {
   margin: 0;
-  margin-bottom: 42px;
+  margin-bottom: 160px;
   font-family: Roboto;
   font-weight: 300;
   font-size: 16px;
@@ -154,16 +124,10 @@
     margin-bottom: 23px;
   }
   .header__btn {
-    width: 182px;
     margin-bottom: 20px;
-    padding: 12px 0;
-    font-size: 14px;
-    line-height: 16px;
-  }
-  .header__btn::after {
-    height: 40px;
   }
   .header__subtext {
+    margin-bottom: 100px;
     font-size: 12px;
     line-height: 14px;
   }

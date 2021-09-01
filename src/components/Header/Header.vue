@@ -16,8 +16,10 @@
           когда Вы покинете этот Мир и при каких обстоятельствах?
         </span>
       </h1>
-      <button class="header__btn" type="button">Да</button>
-      <button class="header__btn" type="button">Нет</button>
+      <button class="btn btn_color_yellow header__btn" type="button">Да</button>
+      <button class="btn btn_color_yellow header__btn" type="button">
+        Нет
+      </button>
       <p class="header__subtext">Онлайн предсказание</p>
     </div>
   </header>

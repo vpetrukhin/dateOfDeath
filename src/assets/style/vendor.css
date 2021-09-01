@@ -1,0 +1,53 @@
+@keyframes background {
+  0% {
+    left: -5%;
+  }
+
+  100% {
+    left: 55%;
+  }
+}
+
+.btn {
+  border: none;
+  padding: 0;
+  width: 310px;
+  padding: 23px 0;
+  position: relative;
+  font-family: Roboto;
+  font-size: 20px;
+  line-height: 23px;
+  color: #FFFFFF;
+  border-radius: 50px;
+}
+.btn_color_yellow {
+  background: linear-gradient(90deg, rgba(246, 200, 102, 0.9) -6.2%, rgba(254, 173, 53, 0.9) 100%);
+}
+.btn::after {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 69px;
+  position: absolute;
+  top: 0;
+  left: -5%;
+  background: transparent linear-gradient(248.67deg, rgba(255, 255, 255, 0) 30.84%, rgba(255, 255, 255, 0.29) 46.06%, rgba(255, 255, 255, 0) 64.04%);
+  animation: background 2s infinite;
+}
+.text-yellow {
+  color: #F6C866;
+}
+
+@media screen and (max-width: 480px) {
+  .btn {
+    width: 182px;
+    margin-bottom: 20px;
+    padding: 12px 0;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .btn::after {
+    height: 40px;
+  }
+}
