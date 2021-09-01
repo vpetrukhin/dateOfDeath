@@ -1,0 +1,7 @@
+.app {
+  background: #202024;
+}
+.app__container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
