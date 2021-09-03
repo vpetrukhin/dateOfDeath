@@ -1,10 +1,10 @@
-.main {}
+.main {
+  
+}
 .main__article {
   margin: 0 auto 69px;
 }
-.main__banner {
-  margin-bottom: 133px;
-}
+
 
 .article {
   max-width: 442px;
@@ -32,7 +32,6 @@
   text-align: center;
   color: #FFFFFF;
 }
-
 .banner {
   max-width: 1440px;
   margin: 0 auto;
@@ -52,6 +51,93 @@
   line-height: 1.4;
   text-align: center;
   color: #FFFFFF;
+}
+.main__banner {
+  margin-bottom: 133px;
+}
+
+.first-question {
+}
+
+.first-question__title {
+  margin: 0;
+  margin-bottom: 46px;
+  font-family: Roboto;
+  font-size: 25px;
+  line-height: 29px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #F6C866;
+}
+.first-question__btns-wrapper {
+  max-width: 310px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.first-question__btn {
+  margin-bottom: 34px;
+}
+.first-question__text {
+  margin: 0;
+}
+
+.quote {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-top: 105px;
+  padding-bottom: 152px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+.quote__eye-icon {
+  display: block;
+  width: 296px;
+  position: absolute;
+  top: -105px;
+  right: -131px;
+}
+.quote__planet {
+  display: block;
+  width: 164px;
+  position: absolute;
+  bottom: 48px;
+  left: -43px;
+}
+.quote__rune1 {
+  display: block;
+  margin-bottom: 80px;
+}
+.quote__text {
+  margin: 0;
+  margin-bottom: 80px;
+  max-width: 230px;
+  font-family: BadScript;
+  font-size: 25px;
+  line-height: 1.4;
+  text-align: center;
+  color: #FFFFFF;
+}
+.quote__rune2 {
+  display: block;
+}
+
+@media screen and (max-width: 1000px) {
+  .quote {
+    padding-top: 61px;
+  }
+  .quote__eye-icon {
+    width: 83.64px;
+    top: 30px;
+    right: -29px;
+  }
+  .quote__planet {
+    width: 52px;
+    left: -16px;
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -82,5 +168,16 @@
     max-width: 219px;
     font-size: 16px;
     line-height: 1.56;
+  }
+  .first-question__title {
+    margin-bottom: 27px;
+    font-size: 16px;
+    line-height: 19px;
+  }
+  .first-question__btns-wrapper {
+    max-width: 182px;
+  }
+  .first-question__btn {
+    margin-bottom: 20px;
   }
 }
