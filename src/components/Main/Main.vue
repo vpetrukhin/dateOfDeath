@@ -23,7 +23,11 @@
     <section class="first-question">
       <h2 class="first-question__title">Боитесь ли вы умереть?</h2>
       <div class="first-question__btns-wrapper">
-        <button class="first-question__btn btn btn_color_yellow" type="button">
+        <button
+          class="first-question__btn btn btn_color_yellow"
+          type="button"
+          @click="$emit('beginQuiz', true)"
+        >
           Да
         </button>
         <button class="first-question__btn btn btn_color_yellow" type="button">
@@ -51,3 +55,9 @@
     </section>
   </main>
 </template>
+
+<script>
+export default {
+  emits: ["beginQuiz"],
+};
+</script>

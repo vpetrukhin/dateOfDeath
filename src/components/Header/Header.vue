@@ -16,8 +16,18 @@
           когда Вы покинете этот Мир и при каких обстоятельствах?
         </span>
       </h1>
-      <button class="btn btn_color_yellow header__btn" type="button">Да</button>
-      <button class="btn btn_color_yellow header__btn" type="button">
+      <button
+        class="btn btn_color_yellow header__btn"
+        type="button"
+        @click="$emit('beginQuiz')"
+      >
+        Да
+      </button>
+      <button
+        class="btn btn_color_yellow header__btn"
+        type="button"
+        @click="$emit('scrollToDict')"
+      >
         Нет
       </button>
       <p class="header__subtext">Онлайн предсказание</p>
@@ -26,5 +36,7 @@
 </template>
 
 <script>
-// export default {};
+export default {
+  emits: ["beginQuiz", "scrollToDict"],
+};
 </script>
