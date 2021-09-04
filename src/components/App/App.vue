@@ -4,6 +4,7 @@
       <Quiz
         :state="this.quizStates"
         v-on:toThirdQuestion="thirdQuestionHandler"
+        v-on:toFourthQuestion="fourthQuestionHandler"
       />
     </div>
     <div v-else-if="this.mainIsActive">
@@ -24,7 +25,6 @@ import Footer from "../Footer/Footer.vue";
 import Quiz from "../Quiz/Quiz.vue";
 
 // Разобраться со скорлом
-// Разобрать с svg
 
 export default {
   name: "App",
@@ -47,6 +47,9 @@ export default {
         this.quizStates.secondQuestion = false;
         this.quizStates.thirdQuestion = true;
       }
+    },
+    fourthQuestionHandler() {
+      this.quizStates.thirdQuestion = false;
     },
     scrollToDict() {
       console.log(this.$refs.main);
