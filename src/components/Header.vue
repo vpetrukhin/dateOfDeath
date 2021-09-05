@@ -1,5 +1,49 @@
+<template>
+  <header class="header">
+    <div class="header__container">
+      <h2 class="header__head-text">Лучшие астрологи и экстрасенсы Румынии</h2>
+      <p class="header__uptitle">Точность прогноза: 97%</p>
+      <div class="header__logo">
+        <img
+          src="../assets/image/woman1.png"
+          alt="icon1"
+          class="header__img"
+        />
+      </div>
+      <h1 class="header__title">
+        Вас беспокоит вопрос о том,
+        <span class="header__title-upper-case">
+          когда Вы покинете этот Мир и при каких обстоятельствах?
+        </span>
+      </h1>
+      <button
+        class="btn btn_color_yellow header__btn"
+        type="button"
+        @click="$emit('beginQuiz')"
+      >
+        Да
+      </button>
+      <button
+        class="btn btn_color_yellow header__btn"
+        type="button"
+        @click="$emit('scrollToDict')"
+      >
+        Нет
+      </button>
+      <p class="header__subtext">Онлайн предсказание</p>
+    </div>
+  </header>
+</template>
+
+<script>
+export default {
+  emits: ["beginQuiz", "scrollToDict"],
+};
+</script>
+
+<style scoped>
 .header {
-  background: transparent url(../../assets/image/blik.png) no-repeat center/100% 850px;
+  background: transparent url(../assets/image/blik.png) no-repeat center/100% 850px;
 }
 .header__container {
   max-width: 1440px;
@@ -40,24 +84,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  
-  
 }
 .header__logo::before {
-  content: '';
+  content: "";
   display: block;
   width: 100%;
   height: 100%;
-  background: url(../../assets/image/icon1.svg)no-repeat center/cover;
-  opacity: .2;
+  background: url(../assets/image/icon1.svg) no-repeat center/cover;
+  opacity: 0.2;
 }
-
 .header__img {
   width: 237px;
   position: absolute;
   z-index: 2;
 }
-
 .header__title {
   max-width: 500px;
   margin: 0;
@@ -66,7 +106,7 @@
   font-size: 25px;
   line-height: 1.4;
   text-align: center;
-  color: #F6C866;
+  color: #f6c866;
 }
 .header__title-upper-case {
   display: block;
@@ -87,7 +127,6 @@
   letter-spacing: 0.1em;
   color: rgba(255, 255, 255, 0.6)
 }
-
 @media screen and (max-width: 690px) {
   .header {
     background-size: 100% 620px;
@@ -132,3 +171,4 @@
     line-height: 14px;
   }
 }
+</style>

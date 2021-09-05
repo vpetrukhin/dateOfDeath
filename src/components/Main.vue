@@ -1,16 +1,70 @@
-.main {
-  
-}
+<template>
+  <main class="main">
+    <article class="article main__article">
+      <img src="../assets/image/hands.png" alt="" class="article__img" />
+      <p class="article__text">
+        Позвольте нам раскрыть эту волнующую тайну и
+        <span class="text-yellow">
+          с точностью определить дату и время вашей смерти,
+        </span>
+        а также предшествующую этому событию причину
+      </p>
+    </article>
+    <section class="banner main__banner">
+      <div class="banner__overlay">
+        <p class="banner__text">
+          Многие не верят предсказаниям и мы решили доказать каждому,
+          <span class="text-yellow">
+            что прогноз может изменить жизнь любого человека!
+          </span>
+        </p>
+      </div>
+    </section>
+    <section class="first-question">
+      <h2 class="first-question__title">Боитесь ли вы умереть?</h2>
+      <div class="first-question__btns-wrapper">
+        <button
+          class="first-question__btn btn btn_color_yellow"
+          type="button"
+          @click="$emit('beginQuiz', true)"
+        >
+          Да
+        </button>
+        <button class="first-question__btn btn btn_color_yellow" type="button">
+          Нет
+        </button>
+      </div>
+      <p class="quethion-num first-question__text">Вопрос 1-5</p>
+    </section>
+    <section class="quote">
+      <img src="../assets/image/eyes.svg" alt="eye" class="quote__eye-icon" />
+      <img src="../assets/image/eye.svg" alt="planet" class="quote__planet" />
+      <img src="../assets/image/rune1.svg" alt="rune" class="quote__rune1" />
+      <p class="quote__text">
+        Вы, конечно, умрете. И все, с кем вы знакомы, тоже однажды умрут.
+      </p>
+      <img src="../assets/image/rune2.svg" alt="rune" class="quote__rune2" />
+    </section>
+  </main>
+</template>
+
+<script>
+export default {
+  emits: ["beginQuiz"],
+};
+</script>
+
+<style scoped>
+/* .main {} */
 .main__article {
   margin: 0 auto 69px;
 }
-
 
 .article {
   max-width: 442px;
   position: relative;
   padding: 130px 0 83px 0;
-  border: 1px solid #FFFFFF;
+  border: 1px solid #ffffff;
   box-sizing: border-box;
   border-radius: 3px;
 }
@@ -30,18 +84,19 @@
   font-size: 25px;
   line-height: 1.4;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
 }
+
 .banner {
   max-width: 1440px;
   margin: 0 auto;
   height: 606px;
-  background: url(../../assets/image/image7.jpg) no-repeat center/cover;
+  background: url(../assets/image/image7.jpg) no-repeat center/cover;
 }
 .banner__overlay {
   height: 100%;
   display: flex;
-  background-color: rgba(0, 0, 0, .4);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .banner__text {
   max-width: 343px;
@@ -50,7 +105,7 @@
   font-size: 25px;
   line-height: 1.4;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .main__banner {
   margin-bottom: 133px;
@@ -65,7 +120,7 @@
   line-height: 29px;
   text-align: center;
   text-transform: uppercase;
-  color: #F6C866;
+  color: #f6c866;
 }
 .first-question__btns-wrapper {
   max-width: 310px;
@@ -117,7 +172,7 @@
   font-size: 25px;
   line-height: 1.4;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .quote__rune2 {
   display: block;
@@ -180,3 +235,4 @@
     margin-bottom: 20px;
   }
 }
+</style>
