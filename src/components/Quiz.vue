@@ -251,7 +251,6 @@ export default {
       this.year = "";
     },
     getAge(date) {
-      console.log(date);
       return Math.floor(
         (new Date().getTime() - new Date(date)) / (24 * 3600 * 365.25 * 1000)
       );
@@ -266,9 +265,6 @@ export default {
       if (this.userAge > 46)
         this.messageText =
           "По вам скучает очень близкий человек, которого больше нет в мире живых. Возможно это кто-то из Ваших родителей.";
-    },
-    setPercentRecord(percentage) {
-      console.log(percentage);
     },
   },
 };

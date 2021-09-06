@@ -20,7 +20,11 @@
       Нажмите на кнопку ниже прямо сейчас и наберите наш номер телефона.
       Прослушайте важную информацию!
     </p>
-    <button class="btn btn_color_green result-page__btn" type="button">
+    <button
+      class="btn btn_color_green result-page__btn"
+      type="button"
+      @click="this.$emit('toInfoPage')"
+    >
       Позвонить и прослушать
     </button>
   </section>
@@ -29,22 +33,13 @@
 <script>
 export default {
   name: "ResultPage",
-  date: () => ({
-    tomorowDate: 0,
-  }),
+  emits: ["toInfoPage"],
   computed: {
     tomorowDate() {
       return `${new Date().getDate() + 1}.${
         new Date().getMonth() + 2
       }.${new Date().getFullYear()}`;
     },
-  },
-  methods: {
-    // getTomorowDate() {
-    //   // const date = ;
-    //   this.tomorowDate = ;
-    //   console.log(this.tomorowDate);
-    // },
   },
 };
 </script>
