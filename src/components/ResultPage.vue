@@ -12,7 +12,7 @@
     </p>
     <h2 class="result-page__title">
       <span class="result-page__title-bold">
-        Первое значимое событие может произойти уже 14.02.2021
+        Первое значимое событие может произойти уже {{ tomorowDate }}
       </span>
       , Вам надо быть готовым, что бы последствия не оказались необратимыми.
     </h2>
@@ -27,7 +27,26 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "ResultPage",
+  date: () => ({
+    tomorowDate: 0,
+  }),
+  computed: {
+    tomorowDate() {
+      return `${new Date().getDate() + 1}.${
+        new Date().getMonth() + 2
+      }.${new Date().getFullYear()}`;
+    },
+  },
+  methods: {
+    // getTomorowDate() {
+    //   // const date = ;
+    //   this.tomorowDate = ;
+    //   console.log(this.tomorowDate);
+    // },
+  },
+};
 </script>
 
 <style>
@@ -76,7 +95,7 @@ export default {};
   color: #f6c866;
   border: 1px solid #ffffff;
   border-radius: 3px;
-  }
+}
 .result-page__title-bold {
   display: block;
   font-weight: 700;

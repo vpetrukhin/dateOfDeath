@@ -21,7 +21,7 @@
       </p>
       <div class="quiz__quote-wrapper" v-else-if="this.fifthQuesthion">
         <img src="../assets/image/eyes.svg" alt="eye" class="quiz__eye-icon" />
-        <p class="quiz__quote message">
+        <p class="message quiz__quote">
           {{ this.messageText }}
         </p>
       </div>
@@ -109,13 +109,13 @@
       <div v-else-if="this.fourthQuestion">
         <h2 class="quiz__title">Снятся ли Вам умершие люди?</h2>
         <div class="quiz__btns-wrapper" @click="fifthQuesthionHandler">
-          <button class="btn btn_color_yellow quiz_btn" type="button">
+          <button class="btn btn_color_yellow quiz__btn" type="button">
             Да
           </button>
-          <button class="btn btn_color_yellow quiz_btn" type="button">
+          <button class="btn btn_color_yellow quiz__btn" type="button">
             Нет
           </button>
-          <button class="btn btn_color_yellow quiz_btn" type="button">
+          <button class="btn btn_color_yellow quiz__btn" type="button">
             Иногда
           </button>
         </div>
@@ -134,10 +134,10 @@
           психикой. Вы готовы узнать, что ждет именно Вас?
         </h2>
         <div class="quiz__btns-wrapper" @click="goToRecording">
-          <button class="btn btn_color_yellow btn_quiz" type="button">
+          <button class="btn btn_color_yellow quiz__btn" type="button">
             Да
           </button>
-          <button class="btn btn_color_yellow btn_quiz" type="button">
+          <button class="btn btn_color_yellow quiz__btn" type="button">
             Затрудняюсь ответить
           </button>
         </div>
@@ -192,11 +192,15 @@ export default {
       if (this.isValid) {
         const date = `${this.year}.${this.month}.${this.day}`;
         this.userAge = this.getAge(date);
-        this.resetInput();
-        this.$emit("toFourthQuestion");
-        this.isLoading = true;
-        this.loadingHandler();
-        this.fourthQuestionHandler();
+        if (this.userAge > 18) {
+          this.resetInput();
+          this.$emit("toFourthQuestion");
+          this.isLoading = true;
+          this.loadingHandler();
+          this.fourthQuestionHandler();
+        } else {
+          this.isValid = false;
+        }
       }
     },
     fourthQuestionHandler() {
@@ -228,8 +232,10 @@ export default {
         this.year === "" ||
         this.day.length > 2 ||
         this.day === "" ||
+        Number(this.day) >= 31 ||
         this.month.length > 2 ||
-        this.montn === ""
+        this.montn === "" ||
+        Number(this.month) >= 12
       ) {
         this.isValid = false;
       } else {
@@ -303,6 +309,9 @@ export default {
   line-height: 1.43;
   text-align: center;
   color: rgba(255, 255, 255, 0.6);
+}
+.quiz__quote-wrapper > .quiz__quote {
+  color: #202024;
 }
 .quiz__title {
   max-width: 288px;
